@@ -1,22 +1,15 @@
-# Makes **Waves** in your Datacenter
+# Make **Waves** in your Data Center
 
-u-bmc is a Linux OS distribution that is fully open-source and tailor-made for
-Baseboard Management Controllers (BMCs). The repository is structured as follows:
+u-bmc is an open-source Linux platform purpose-built for Baseboard Management
+Controllers. Everything lives in a single monorepo
+([u-bmc/u-bmc](https://github.com/u-bmc/u-bmc)), forming what we call a _neo-monolith_: a tightly integrated
+systems-building library you can embed in a standalone Linux system or, in the near future, drop
+into an existing OpenBMC stack to migrate gradually.
 
-* u-bmc/u-bmc
+## Why you might like it:
 
-This is the main u-bmc repository. This should be your starting point.
+* Limited IPMI and Redfish support, plus a modern gRPC interface exposed through [ConnectRPC](https://connectrpc.com).
+* Core services, board support, update logic, and test harnesses are all here, ready to ship with sane defaults.
+* Our build and CI pipelines run entirely on [Dagger](https://dagger.io)—no Makefile spaghetti.
 
-* u-bmc/operator
-
-The 'operator' is the core u-bmc component that manages all microservices and
-the complete lifecycle of the BMC.
-
-Here's a short sneak-peek of features for the upcoming dev release:
-- New userspace architecture using a monolithic approach
-- TUF updates
-- Sigstore provenance
-- New boards supported
-- A more flexible build system using Task+Dagger
-- Compatibility with Redfish via gRPC and HTTP(S)
-- Many more, so stay tuned!
+Pull the [u-bmc/u-bmc](https://github.com/u-bmc/u-bmc) repo, run the Dagger workflow, and make some waves!
